@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -45,8 +47,8 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(flex: 1,
                   child:Container(
-                      height: 25,
-                      margin: EdgeInsets.all(10),
+                      height: 30,
+                      margin: EdgeInsets.all(8),
                   child:Image.asset('images/notification.png',width: 20,height:20,fit: BoxFit.fill)
                 ),
               ),
@@ -78,9 +80,10 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Expanded(flex: 1,
                             child:Container(
-                              height: 23,
+                              margin: EdgeInsets.all(16),
+                              height: 25,
                               color:Colors.white ,
-                              child: Image.asset('images/location.jpg',width: 20,height: 25,fit: BoxFit.fill,),
+                              child: Image.asset('images/loc.png',width: 20,height: 25,fit: BoxFit.fill,),
                             )
                           ),
                           Expanded(flex: 6,
@@ -97,9 +100,9 @@ class _HomePageState extends State<HomePage> {
                               child:Container(
                                 margin: EdgeInsets.all(5),
                                 //color: Colors.red,
-                                height: 30,
+                                height: 35,
                                 width: 8,
-                                child: Image.asset('images/map.png',height: 10,width: 5,fit: BoxFit.fill,),
+                                child: Image.asset('images/map.png',height: 20,width: 5,fit: BoxFit.fill,),
                               )
                           )
                         ],
@@ -124,9 +127,15 @@ class _HomePageState extends State<HomePage> {
                             Expanded(flex: 4,
                                 child:Container(
                                   height: 30,
-                                  //color:Colors.white60 ,
                                   child: Text(
-                                    'On sale today  ',style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),
+                                    'On sale today',
+                                    style: const TextStyle(
+                                        color:  const Color(0xff000000),
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Questrial',
+                                        fontStyle:  FontStyle.normal,
+                                        fontSize: 25.0
+                                    ),
                                   ),
                                 )
                             ),
@@ -138,7 +147,14 @@ class _HomePageState extends State<HomePage> {
                                   height: 30,
                                   width: 20,
                                   child:Text(
-                                    'See All',style: TextStyle(fontSize: 25,color: Colors.lightGreen,fontWeight: FontWeight.bold),
+                                    "See All",
+                                    style: const TextStyle(
+                                        color: Color(0xff5d6e1e),
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: "NunitoSans",
+                                        fontStyle:  FontStyle.normal,
+                                        fontSize: 20
+                                    ),
                                   ),
                                 )
                             )
@@ -293,7 +309,14 @@ class _HomePageState extends State<HomePage> {
                                   height: 30,
                                   //color:Colors.white60 ,
                                   child: Text(
-                                    'Grow Tips From Planters',style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),
+                                    'Grow Tips From Planters',
+                                    style: const TextStyle(
+                                        color:  const Color(0xff000000),
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Questrial',
+                                        fontStyle:  FontStyle.normal,
+                                        fontSize: 25.0
+                                    ),
                                   ),
                                 )
                             ),
@@ -313,6 +336,51 @@ class _HomePageState extends State<HomePage> {
                 ]
             ),
 
+            Row(
+              children: [
+                Expanded(flex: 1,
+                  child:DefaultTabController(
+                  length: 4,
+                    child: TabBar(
+                      tabs: [
+                        Tab(
+                          child: Container(
+                            child: Text(
+                              'Popular',style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Container(
+                            child: Text(
+                              'Professional',style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Container(
+                            child: Text(
+                              'Following',style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Container(
+                            child: Text(
+                              'Closed',style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                      ],
+                      labelColor: Colors.black45,
+                      isScrollable: true,
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicatorColor: Colors.green,
+                      ),
+                    ),
+                  )
+              ],
+            ),
             /// Profiles ///
 
             Row(
@@ -363,6 +431,10 @@ class _HomePageState extends State<HomePage> {
                   )
                 ]
             ),
+            Divider(
+              height: 2,
+              thickness: 2,
+            ),
 
             Row(
                 children:  [
@@ -411,6 +483,10 @@ class _HomePageState extends State<HomePage> {
                       )
                   )
                 ]
+            ),
+            Divider(
+              height: 2,
+              thickness: 2,
             ),
 
 
@@ -461,6 +537,10 @@ class _HomePageState extends State<HomePage> {
                       )
                   )
                 ]
+            ),
+            Divider(
+              height: 2,
+              thickness: 2,
             ),
 
 
